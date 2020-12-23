@@ -77,3 +77,27 @@
 #     results = post_process_result(results)    
 #     return results  
 
+# how many names are in first three paragraphs
+
+# init = 5
+# last = 2
+# full_texts = combined_csv.text.apply(lambda x: super_clean('\n\n'.join(x.split('\n\n')[:init] + x.split('\n\n')[-last:])))      
+# names_temp = list(zip(full_texts.values, combined_csv[['Party One', 'Party Two']].values))
+# trues_temp = np.array([super_clean(i) in full_text for full_text, (i, j) in names_temp if isinstance(i, str)])
+# trues_temp2 = np.array([super_clean(j) in full_text for full_text, (i, j) in names_temp if isinstance(j, str)])
+
+# trues_temp.mean()
+
+# trues_temp2.mean()
+
+# s = [(i, full_text, j) for i, (full_text, j) in enumerate(zip(full_texts.values, trues_temp)) if not j]
+# print(len(s))
+# for i, full_text, k in s:
+#     print(i, full_text)
+#     namea, nameb = names_temp[i][1]
+#     print(f'nameA: {namea}      nameB: {nameb}')
+#     print(k, super_clean(namea) in super_clean(full_text))
+#     print('*'*50)
+#     print()
+
+# print(combined_csv.text.values[37])
